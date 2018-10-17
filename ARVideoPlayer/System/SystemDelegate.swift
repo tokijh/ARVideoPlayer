@@ -9,3 +9,9 @@
 protocol SystemDelegate: class {
     func command(_ system: System, command: System.Command)
 }
+
+extension SystemDelegate {
+    func command(_ system: System, command: System.Command) {
+        
+    }
+}

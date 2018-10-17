@@ -74,6 +74,11 @@ class ViewController: UIViewController {
         statusView.isHidden = true
         statusLabel.text = ""
     }
+    
+    private func set(message: String?) {
+        statusView.isHidden = message == nil
+        statusLabel.text = message
+    }
 }
 
 extension ViewController: ARSCNViewDelegate {
@@ -93,6 +98,8 @@ extension ViewController: SystemDelegate {
             run(configure: configure, options: options)
         case .pause:
             pause()
+        case let .setStatusText(message):
+            set(message: message)
         }
     }
 }

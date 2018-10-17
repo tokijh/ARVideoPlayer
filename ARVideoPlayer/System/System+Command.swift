@@ -12,6 +12,7 @@ extension System {
     enum Command {
         case run(configure: ARConfiguration, options: ARSession.RunOptions)
         case pause
+        case setStatusText(String?)
     }
     
     func send(command: Command) {
