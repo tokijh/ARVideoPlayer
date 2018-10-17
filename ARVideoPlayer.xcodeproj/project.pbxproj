@@ -7,14 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6016A53E21777AC400AA931C /* System+Plane+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6016A53D21777AC400AA931C /* System+Plane+Logic.swift */; };
 		6043B567217744A900BD016D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B566217744A900BD016D /* AppDelegate.swift */; };
 		6043B569217744A900BD016D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B568217744A900BD016D /* ViewController.swift */; };
 		6043B56C217744A900BD016D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6043B56A217744A900BD016D /* Main.storyboard */; };
 		6043B56E217744AB00BD016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6043B56D217744AB00BD016D /* Assets.xcassets */; };
 		6043B571217744AB00BD016D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6043B56F217744AB00BD016D /* LaunchScreen.storyboard */; };
+		6043B57A2177459C00BD016D /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B5792177459C00BD016D /* System.swift */; };
+		6043B57C217745E100BD016D /* System+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B57B217745E100BD016D /* System+Status.swift */; };
+		6043B57E2177461700BD016D /* System+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B57D2177461700BD016D /* System+Command.swift */; };
+		6043B5802177468500BD016D /* SystemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B57F2177468500BD016D /* SystemDelegate.swift */; };
+		6043B58221774EDE00BD016D /* System+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B58121774EDE00BD016D /* System+Action.swift */; };
+		6043B58421774F3500BD016D /* System+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B58321774F3500BD016D /* System+Logic.swift */; };
+		6043B5872177605400BD016D /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B5862177605400BD016D /* Plane.swift */; };
+		6043B5892177609600BD016D /* BorderPlaneGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B5882177609600BD016D /* BorderPlaneGeometry.swift */; };
+		6043B58B217760C100BD016D /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 6043B58A217760C100BD016D /* Assets.scnassets */; };
+		6043B58D217761AE00BD016D /* BorderPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B58C217761AE00BD016D /* BorderPlane.swift */; };
+		6043B58F2177628D00BD016D /* MeshPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6043B58E2177628D00BD016D /* MeshPlane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6016A53D21777AC400AA931C /* System+Plane+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System+Plane+Logic.swift"; sourceTree = "<group>"; };
 		6043B563217744A900BD016D /* ARVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6043B566217744A900BD016D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6043B568217744A900BD016D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +35,17 @@
 		6043B56D217744AB00BD016D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6043B570217744AB00BD016D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6043B572217744AB00BD016D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6043B5792177459C00BD016D /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		6043B57B217745E100BD016D /* System+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System+Status.swift"; sourceTree = "<group>"; };
+		6043B57D2177461700BD016D /* System+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System+Command.swift"; sourceTree = "<group>"; };
+		6043B57F2177468500BD016D /* SystemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDelegate.swift; sourceTree = "<group>"; };
+		6043B58121774EDE00BD016D /* System+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System+Action.swift"; sourceTree = "<group>"; };
+		6043B58321774F3500BD016D /* System+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System+Logic.swift"; sourceTree = "<group>"; };
+		6043B5862177605400BD016D /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		6043B5882177609600BD016D /* BorderPlaneGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderPlaneGeometry.swift; sourceTree = "<group>"; };
+		6043B58A217760C100BD016D /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
+		6043B58C217761AE00BD016D /* BorderPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderPlane.swift; sourceTree = "<group>"; };
+		6043B58E2177628D00BD016D /* MeshPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +59,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6016A53A21777A2F00AA931C /* Plane */ = {
+			isa = PBXGroup;
+			children = (
+				6043B5862177605400BD016D /* Plane.swift */,
+				6016A53B21777A3600AA931C /* Border */,
+				6043B58E2177628D00BD016D /* MeshPlane.swift */,
+			);
+			path = Plane;
+			sourceTree = "<group>";
+		};
+		6016A53B21777A3600AA931C /* Border */ = {
+			isa = PBXGroup;
+			children = (
+				6043B58C217761AE00BD016D /* BorderPlane.swift */,
+				6043B5882177609600BD016D /* BorderPlaneGeometry.swift */,
+			);
+			path = Border;
+			sourceTree = "<group>";
+		};
+		6016A53C21777AB000AA931C /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6043B58321774F3500BD016D /* System+Logic.swift */,
+				6016A53D21777AC400AA931C /* System+Plane+Logic.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		6043B55A217744A900BD016D = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +107,37 @@
 			isa = PBXGroup;
 			children = (
 				6043B566217744A900BD016D /* AppDelegate.swift */,
+				6043B5852177604A00BD016D /* Node */,
+				6043B5782177458900BD016D /* System */,
 				6043B568217744A900BD016D /* ViewController.swift */,
 				6043B56A217744A900BD016D /* Main.storyboard */,
+				6043B58A217760C100BD016D /* Assets.scnassets */,
 				6043B56D217744AB00BD016D /* Assets.xcassets */,
 				6043B56F217744AB00BD016D /* LaunchScreen.storyboard */,
 				6043B572217744AB00BD016D /* Info.plist */,
 			);
 			path = ARVideoPlayer;
+			sourceTree = "<group>";
+		};
+		6043B5782177458900BD016D /* System */ = {
+			isa = PBXGroup;
+			children = (
+				6043B5792177459C00BD016D /* System.swift */,
+				6043B57B217745E100BD016D /* System+Status.swift */,
+				6043B57D2177461700BD016D /* System+Command.swift */,
+				6043B58121774EDE00BD016D /* System+Action.swift */,
+				6043B57F2177468500BD016D /* SystemDelegate.swift */,
+				6016A53C21777AB000AA931C /* Logic */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		6043B5852177604A00BD016D /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				6016A53A21777A2F00AA931C /* Plane */,
+			);
+			path = Node;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6043B58B217760C100BD016D /* Assets.scnassets in Resources */,
 				6043B571217744AB00BD016D /* LaunchScreen.storyboard in Resources */,
 				6043B56E217744AB00BD016D /* Assets.xcassets in Resources */,
 				6043B56C217744A900BD016D /* Main.storyboard in Resources */,
@@ -135,8 +212,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6043B58221774EDE00BD016D /* System+Action.swift in Sources */,
 				6043B569217744A900BD016D /* ViewController.swift in Sources */,
+				6043B57A2177459C00BD016D /* System.swift in Sources */,
+				6043B58421774F3500BD016D /* System+Logic.swift in Sources */,
+				6043B5872177605400BD016D /* Plane.swift in Sources */,
+				6043B57C217745E100BD016D /* System+Status.swift in Sources */,
 				6043B567217744A900BD016D /* AppDelegate.swift in Sources */,
+				6043B58D217761AE00BD016D /* BorderPlane.swift in Sources */,
+				6016A53E21777AC400AA931C /* System+Plane+Logic.swift in Sources */,
+				6043B57E2177461700BD016D /* System+Command.swift in Sources */,
+				6043B58F2177628D00BD016D /* MeshPlane.swift in Sources */,
+				6043B5892177609600BD016D /* BorderPlaneGeometry.swift in Sources */,
+				6043B5802177468500BD016D /* SystemDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

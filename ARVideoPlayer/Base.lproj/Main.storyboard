@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARVideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wB-4e-v6j">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4o-Bi-qWG">
+                                <rect key="frame" x="30" y="50" width="315" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zay-P0-9fq">
+                                        <rect key="frame" x="130.5" y="14" width="54.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30174955990000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zay-P0-9fq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="u4o-Bi-qWG" secondAttribute="leading" constant="14" id="1iz-ot-z8P"/>
+                                    <constraint firstItem="zay-P0-9fq" firstAttribute="centerX" secondItem="u4o-Bi-qWG" secondAttribute="centerX" id="HGB-9D-nO7"/>
+                                    <constraint firstItem="zay-P0-9fq" firstAttribute="top" secondItem="u4o-Bi-qWG" secondAttribute="top" constant="14" id="WXL-uN-kDO"/>
+                                    <constraint firstAttribute="bottom" secondItem="zay-P0-9fq" secondAttribute="bottom" constant="14" id="c2D-QL-BkC"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zay-P0-9fq" secondAttribute="trailing" constant="14" id="nSk-f8-NYB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u4o-Bi-qWG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7EL-7l-Ofe"/>
+                            <constraint firstItem="3wB-4e-v6j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="A5B-Rh-y3Y"/>
+                            <constraint firstItem="u4o-Bi-qWG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Bhx-dp-lve"/>
+                            <constraint firstAttribute="trailing" secondItem="3wB-4e-v6j" secondAttribute="trailing" id="Fsm-I0-Vxe"/>
+                            <constraint firstAttribute="bottom" secondItem="3wB-4e-v6j" secondAttribute="bottom" id="J5U-yW-vky"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u4o-Bi-qWG" secondAttribute="trailing" constant="30" id="e8h-Sc-xAJ"/>
+                            <constraint firstItem="3wB-4e-v6j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f20-e0-Eq3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="3wB-4e-v6j" id="VuO-i7-6j2"/>
+                        <outlet property="statusLabel" destination="zay-P0-9fq" id="BVE-Y6-InS"/>
+                        <outlet property="statusView" destination="u4o-Bi-qWG" id="0oY-EN-mOW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
