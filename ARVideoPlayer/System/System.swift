@@ -17,5 +17,8 @@ class System {
     weak var delegate: SystemDelegate? = nil
     
     /// MARK Device
-    let device: MTLDevice = MTLCreateSystemDefaultDevice()!
+    let device: MTLDevice? = MTLCreateSystemDefaultDevice()
+    
+    /// MARK Selected Plane
+    var selectedPlane: Plane?
 }

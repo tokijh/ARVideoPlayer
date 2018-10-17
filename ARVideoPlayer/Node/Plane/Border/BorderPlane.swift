@@ -8,7 +8,8 @@
 
 import ARKit
 
-class BorderPlane: Plane {
+class BorderPlane: SCNNode {
+    
     init(borderColor: UIColor?) {
         super.init()
         self.borderColor = borderColor

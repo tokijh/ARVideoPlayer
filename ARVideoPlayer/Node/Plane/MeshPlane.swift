@@ -9,7 +9,7 @@
 import ARKit
 
 @available(iOS 11.3, *)
-class MeshPlane: Plane {
+class MeshPlane: SCNNode {
     init(planeGeometry: ARSCNPlaneGeometry, planeColor: UIColor?) {
         super.init()
         self.planeColor = planeColor

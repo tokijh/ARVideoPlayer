@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     private func setup() {
         setupSystem()
         setupSceneView()
+        setupGesture()
         setupStatusLabel()
     }
     
@@ -66,6 +67,26 @@ class ViewController: UIViewController {
         sceneView.session.pause()
     }
     
+    /// MARK Gesture
+    private func setupGesture() {
+        setupTapGesture()
+    }
+    
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapSceneView(_:)))
+        sceneView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func didTapSceneView(_ gesture: UITapGestureRecognizer) {
+        let location = gesture.location(in: sceneView)
+        let hitResults = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
+        guard let anchor = hitResults.first?.anchor,
+            let node = sceneView.node(for: anchor),
+            let plane = node.childNodes.first as? Plane
+            else { return }
+        system.set(action: .didTap(plane: plane))
+    }
+    
     /// MARK Status Label
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
@@ -89,6 +110,10 @@ extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         system.set(action: .didUpdate(node: node, anchor: anchor))
     }
+}
+
+extension ViewController {
+    
 }
 
 extension ViewController: SystemDelegate {
