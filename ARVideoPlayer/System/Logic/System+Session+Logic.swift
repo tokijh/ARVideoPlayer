@@ -31,7 +31,7 @@ extension System {
             return
         }
         let configure = ARWorldTrackingConfiguration()
-        let options: ARSession.RunOptions = [.resetTracking, .resetTracking]
+        let options: ARSession.RunOptions = []
         send(command: .run(configure: configure, options: options))
     }
     
