@@ -18,6 +18,7 @@ extension System {
         }
         let options: ARSession.RunOptions = [.resetTracking, .resetTracking]
         send(command: .run(configure: configure, options: options))
+        set(status: .tracking)
     }
     
     func pauseSession() {
@@ -36,5 +37,6 @@ extension System {
     
     func stopSession() {
         send(command: .pause)
+        set(status: .setup)
     }
 }
