@@ -59,12 +59,10 @@ class ViewController: UIViewController {
     }
     
     private func run(configure: ARConfiguration, options: ARSession.RunOptions) {
-        print("run", configure, options)
         sceneView.session.run(configure, options: options)
     }
     
     private func pause() {
-        print("pause")
         sceneView.session.pause()
     }
     
@@ -85,10 +83,6 @@ extension ViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         system.set(action: .didUpdate(node: node, anchor: anchor))
-    }
-    
-    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
-        print("didRemove", node, anchor)
     }
 }
 
