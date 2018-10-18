@@ -30,11 +30,44 @@ class Plane: SCNNode {
         setupBorderPlane()
     }
     
+    /// MARK Status Value
+    public private(set) var isShowingVideoPlayer: Bool = false {
+        didSet {
+            if isShowingVideoPlayer {
+                setupPlayer()
+            }
+        }
+    }
+    public private(set) var isSelected: Bool = false {
+        didSet {
+            if isShowingVideoPlayer {
+                borderPlane.isHidden = !isSelected
+            }
+        }
+    }
+    
+    /// MARK Selection
+    public func select() {
+        guard isShowingVideoPlayer else { return }
+        setupPlayer()
+        isSelected = true
+    }
+    
+    public func deselect() {
+        guard isShowingVideoPlayer else { return }
+        isSelected = false
+    }
+    
     /// MARK Update
     public func update(anchor: ARPlaneAnchor) {
-        updateBorderPlane(anchor: anchor)
-        if #available(iOS 11.3, *) {
-            updateMeshPlane(anchor: anchor)
+        if isShowingVideoPlayer {
+            updateBorderPlane(anchor: anchor)
+            borderPlane.isHidden = !isSelected
+        } else {
+            updateBorderPlane(anchor: anchor)
+            if #available(iOS 11.3, *) {
+                updateMeshPlane(anchor: anchor)
+            }
         }
     }
     
@@ -89,15 +122,32 @@ class Plane: SCNNode {
     }
     
     private func setupVideoPlayer(videoPlayer: VideoPlayer) {
+        guard !childNodes.contains(videoPlayer) else { return }
         addChildNode(videoPlayer)
     }
     
-    public func showPlayer() {
+    public func setupPlayer() {
         guard videoPlayer == nil else { return }
         videoPlayer = VideoPlayer()
         guard let borderPlaneGeometry = borderPlane.borderPlaneGeometry else { return }
-        print(borderPlaneGeometry.width, borderPlaneGeometry.height)
         videoPlayer?.simdPosition = borderPlane.simdPosition
         videoPlayer?.planeSize = CGSize(width: borderPlaneGeometry.width - 0.01, height: borderPlaneGeometry.height - 0.01)
+        deselect()
+    }
+    
+    public func showPlayer() {
+        isShowingVideoPlayer = true
+    }
+    
+    public func playVideo() {
+        videoPlayer?.play()
+    }
+    
+    public func pauseVideo() {
+        videoPlayer?.pause()
+    }
+    
+    public func toggleVideo() {
+        videoPlayer?.toggle()
     }
 }

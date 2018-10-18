@@ -110,6 +110,10 @@ extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         system.set(action: .didUpdate(node: node, anchor: anchor))
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+        system.set(action: .didRemove(node: node, anchor: anchor))
+    }
 }
 
 extension ViewController {

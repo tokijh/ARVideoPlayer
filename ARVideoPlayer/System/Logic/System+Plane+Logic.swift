@@ -20,10 +20,16 @@ extension System {
         }
         node.addChildNode(plane)
         plane.update(anchor: planeAnchor)
+        addPlane(plane)
     }
     
     func didUpdate(node: SCNNode, planeAnchor: ARPlaneAnchor) {
         guard let plane = node.childNodes.first as? Plane else { return }
         plane.update(anchor: planeAnchor)
+    }
+    
+    func didRemove(node: SCNNode, planeAnchor: ARPlaneAnchor) {
+        guard let plane = node.childNodes.first as? Plane else { return }
+        removePlane(plane)
     }
 }

@@ -19,6 +19,20 @@ class System {
     /// MARK Device
     let device: MTLDevice? = MTLCreateSystemDefaultDevice()
     
+    /// MARK Planes
+    var planes: [Plane] = []
+    
     /// MARK Selected Plane
     var selectedPlane: Plane?
+}
+
+extension System {
+    func addPlane(_ plane: Plane) {
+        guard !planes.contains(plane) else { return }
+        planes.append(plane)
+    }
+    
+    func removePlane(_ plane: Plane) {
+        planes = planes.filter({ $0 == plane })
+    }
 }

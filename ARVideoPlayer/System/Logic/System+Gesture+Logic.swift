@@ -9,8 +9,21 @@
 import ARKit
 extension System {
     func didTap(plane: Plane) {
-        set(status: .playingVideo)
-        resumeSession()
-        plane.showPlayer()
+        if status == .tracking {
+            set(status: .playingVideo)
+            resumeSession()
+            planes.forEach({ $0.deselect() })
+        }
+        if status == .playingVideo {
+            plane.showPlayer()
+            if let selectedPlane = selectedPlane,
+                plane == selectedPlane {
+                selectedPlane.toggleVideo()
+            } else {
+                selectedPlane?.deselect()
+                plane.select()
+                selectedPlane = plane
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ extension System {
         case viewDidDisappear
         case didAdd(node: SCNNode, anchor: ARAnchor)
         case didUpdate(node: SCNNode, anchor: ARAnchor)
+        case didRemove(node: SCNNode, anchor: ARAnchor)
         case didTap(plane: Plane)
     }
     
@@ -25,6 +26,7 @@ extension System {
         case .viewDidDisappear: actionViewDidDisappear()
         case let .didAdd(node, anchor): actionDidAdd(node: node, anchor: anchor)
         case let .didUpdate(node, anchor): actionDidUpdate(node: node, anchor: anchor)
+        case let .didRemove(node, anchor): actionDidRemove(node: node, anchor: anchor)
         case let .didTap(plane): actionDidTap(plane: plane)
         }
     }
@@ -62,6 +64,12 @@ extension System {
     private func actionDidUpdate(node: SCNNode, anchor: ARAnchor) {
         if let planeAnchor = anchor as? ARPlaneAnchor {
             didUpdate(node: node, planeAnchor: planeAnchor)
+        }
+    }
+    
+    private func actionDidRemove(node: SCNNode, anchor: ARAnchor) {
+        if let planeAnchor = anchor as? ARPlaneAnchor {
+            didRemove(node: node, planeAnchor: planeAnchor)
         }
     }
 }

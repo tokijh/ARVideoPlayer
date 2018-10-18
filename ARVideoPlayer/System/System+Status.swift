@@ -15,25 +15,6 @@ extension System {
     
     func set(status: Status) {
         self.status = status
-        switch status {
-        case .setup: statusSetup()
-        case .tracking: statusTracking()
-        case .playingVideo: statusPlayingVideo()
-        }
         setStatusText()
-    }
-}
-
-extension System {
-    private func statusSetup() {
-        
-    }
-    
-    private func statusTracking() {
-        
-    }
-    
-    private func statusPlayingVideo() {
-        
     }
 }
