@@ -70,6 +70,8 @@ class ViewController: UIViewController {
     /// MARK Gesture
     private func setupGesture() {
         setupTapGesture()
+        setupPinchGesture()
+        setupRotationGesture()
     }
     
     private func setupTapGesture() {
@@ -85,6 +87,30 @@ class ViewController: UIViewController {
             let plane = node.childNodes.first as? Plane
             else { return }
         system.set(action: .didTap(plane: plane))
+    }
+    
+    private func setupPinchGesture() {
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.didPinchSceneView(_:)))
+        pinchGesture.delegate = self
+        sceneView.addGestureRecognizer(pinchGesture)
+    }
+    
+    @objc private func didPinchSceneView(_ gesture: UIPinchGestureRecognizer) {
+        let scale = gesture.scale
+        gesture.scale = 1
+        system.set(action: .didPinch(scale: scale))
+    }
+    
+    private func setupRotationGesture() {
+        let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(self.didRotateSceneView(_:)))
+        rotationGesture.delegate = self
+        sceneView.addGestureRecognizer(rotationGesture)
+    }
+    
+    @objc private func didRotateSceneView(_ gesture: UIRotationGestureRecognizer) {
+        let rotation = gesture.rotation
+        gesture.rotation = 0
+        system.set(action: .didRotate(rotation: rotation))
     }
     
     /// MARK Status Label
@@ -116,8 +142,10 @@ extension ViewController: ARSCNViewDelegate {
     }
 }
 
-extension ViewController {
-    
+extension ViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
 
 extension ViewController: SystemDelegate {

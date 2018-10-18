@@ -17,6 +17,8 @@ extension System {
         case didUpdate(node: SCNNode, anchor: ARAnchor)
         case didRemove(node: SCNNode, anchor: ARAnchor)
         case didTap(plane: Plane)
+        case didPinch(scale: CGFloat)
+        case didRotate(rotation: CGFloat)
     }
     
     public func set(action: Action) {
@@ -28,6 +30,8 @@ extension System {
         case let .didUpdate(node, anchor): actionDidUpdate(node: node, anchor: anchor)
         case let .didRemove(node, anchor): actionDidRemove(node: node, anchor: anchor)
         case let .didTap(plane): actionDidTap(plane: plane)
+        case let .didPinch(scale): actionDidPinch(scale: scale)
+        case let .didRotate(rotation): actionDidRotate(rotation: rotation)
         }
     }
 }
@@ -51,6 +55,14 @@ extension System {
     
     private func actionDidTap(plane: Plane) {
         didTap(plane: plane)
+    }
+    
+    private func actionDidPinch(scale: CGFloat) {
+        didPinch(scale: scale)
+    }
+    
+    private func actionDidRotate(rotation: CGFloat) {
+        didRotate(rotation: rotation)
     }
 }
 

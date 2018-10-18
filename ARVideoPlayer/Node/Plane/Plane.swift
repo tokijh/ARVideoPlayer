@@ -58,6 +58,20 @@ class Plane: SCNNode {
         isSelected = false
     }
     
+    /// MARK Pich
+    public func pinch(_ scale: CGFloat) {
+        guard isShowingVideoPlayer, isSelected else { return }
+        let action = SCNAction.scale(by: scale, duration: 0.1)
+        runAction(action)
+    }
+    
+    /// MARK Rotation
+    public func rotate(_ rotation: CGFloat) {
+        guard isShowingVideoPlayer, isSelected else { return }
+        let action = SCNAction.rotate(by: rotation, around: SCNVector3(0, -1, 0), duration: 0.1)
+        runAction(action)
+    }
+    
     /// MARK Update
     public func update(anchor: ARPlaneAnchor) {
         if isShowingVideoPlayer {

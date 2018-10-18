@@ -26,4 +26,14 @@ extension System {
             }
         }
     }
+    
+    func didPinch(scale: CGFloat) {
+        guard let selectedPlane = selectedPlane else { return }
+        selectedPlane.pinch(scale)
+    }
+    
+    func didRotate(rotation: CGFloat) {
+        guard let selectedPlane = selectedPlane else { return }
+        selectedPlane.rotate(rotation)
+    }
 }
